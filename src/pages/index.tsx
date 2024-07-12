@@ -3,11 +3,23 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./HomeScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Feather as Icon } from "@expo/vector-icons";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import colors from "../../assets/colors";
 import Header from "../components/Header";
+import AllCategories from "./AllCategories";
+import HeaderSearch from "../components/HeaderSearch";
+import Calendar from "./Calendar";
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  MainNavigator: undefined;
+  AllCategories: undefined;
+  DrawerNavigator: undefined;
+  Home: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const BottomTab = createMaterialBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 function MainNavigator() {
   return (
@@ -69,6 +81,16 @@ function MainNavigator() {
   );
 }
 
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Calendar" component={Calendar} />
+      <Drawer.Screen name="Payments" component={Calendar} />
+      <Drawer.Screen name="Address" component={Calendar} />
+    </Drawer.Navigator>
+  );
+}
+
 function RootNavigator() {
   return (
     <Stack.Navigator
@@ -76,7 +98,13 @@ function RootNavigator() {
         header: () => <Header />,
       }}
     >
+      <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
       <Stack.Screen name="MainNavigator" component={MainNavigator} />
+      <Stack.Screen
+        name="AllCategories"
+        component={AllCategories}
+        options={{ header: () => <HeaderSearch /> }}
+      />
     </Stack.Navigator>
   );
 }

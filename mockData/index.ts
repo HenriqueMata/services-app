@@ -21,48 +21,48 @@ const offers = [
 
 const categories = [
   {
-    icon: "",
-    name: "AC Repair",
+    iconName: "repair",
+    label: "AC Repair",
     backgroundColor: "#FFBC99",
   },
   {
-    icon: "",
-    name: "Beauty",
+    iconName: "beauty",
+    label: "Beauty",
     backgroundColor: "#CABDFF",
   },
   {
-    icon: "",
-    name: "Appliance",
+    iconName: "appliance",
+    label: "Appliance",
     backgroundColor: "#B1E5FC",
   },
   {
-    icon: "",
-    name: "Painting",
+    iconName: "painting",
+    label: "Painting",
     backgroundColor: "#B5EBCD",
   },
   {
-    icon: "",
-    name: "Cleaning",
+    iconName: "cleaning",
+    label: "Cleaning",
     backgroundColor: "#FFD88D",
   },
   {
-    icon: "",
-    name: "Plumbing",
+    iconName: "plumbing",
+    label: "Plumbing",
     backgroundColor: "#CBEBA4",
   },
   {
-    icon: "",
-    name: "Eletronics",
+    iconName: "electronics",
+    label: "Electronics",
     backgroundColor: "#FB9B9B",
   },
   {
-    icon: "",
-    name: "Shifting",
+    iconName: "shifting",
+    label: "Shifting",
     backgroundColor: "#F8B0ED",
   },
   {
-    icon: "",
-    name: "Men's Salon",
+    iconName: "salon",
+    label: "Men's Salon",
     backgroundColor: "#AFC6FF",
   },
 ];

@@ -2,34 +2,34 @@ import { View, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import colors from "../../../assets/colors";
 import { Feather as Icon } from "@expo/vector-icons";
+import styles from "./style";
 
-const SearchInput: React.FC = () => {
+interface SearchInputProps {
+  placeholder: string;
+  header?: boolean;
+  onPress?: () => void;
+}
+
+const SearchInput: React.FC<SearchInputProps> = ({
+  placeholder,
+  header,
+  onPress,
+}) => {
   return (
-    <View style={{ justifyContent: "center" }}>
+    <View style={styles.container}>
       <TextInput
-        placeholder="Search what you need..."
+        placeholder={placeholder}
         placeholderTextColor={colors.gray}
-        style={{
-          padding: 12,
-          backgroundColor: colors.darkWhite,
-          height: 52,
-          borderRadius: 10,
-          borderWidth: 1,
-          borderColor: colors.white2,
-        }}
+        style={[styles.inputSearch, { paddingLeft: header ? 52 : 16 }]}
       />
-      <TouchableOpacity
-        style={{
-          position: "absolute",
-          right: 10,
-          padding: 8,
-          borderRadius: 8,
-          backgroundColor: colors.primaryColor,
-          justifyContent: "center",
-        }}
-      >
+      <TouchableOpacity style={styles.buttonSearch}>
         <Icon name="search" size={18} color={colors.white} />
       </TouchableOpacity>
+      {header && (
+        <TouchableOpacity style={styles.buttonBack} onPress={onPress}>
+          <Icon name="arrow-left" size={28} color={colors.secondColor} />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
