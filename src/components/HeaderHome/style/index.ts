@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../../assets/colors";
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
     padding: 16,
+    backgroundColor: colors.white,
   },
   containerText: { marginLeft: 12 },
   textLocation: { fontSize: 10 },
