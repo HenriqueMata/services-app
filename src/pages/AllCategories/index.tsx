@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import CardHome from "../../components/CardHome";
+import CardHome from "../../components/CardDefault";
 
 import styles from "./style";
 import SearchInput from "../../components/SearchInput";
